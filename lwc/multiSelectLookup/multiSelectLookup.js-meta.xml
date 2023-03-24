@@ -16,7 +16,7 @@
         required="true"
         type="String"
         placeholder="Ex: standard:account"
-        description="Enter the name of the icon to be used on the queried/selected records"
+        description="Enter the name of the icon to be used on the queried/selected records."
       />
             <property
         name="objApiName"
@@ -24,14 +24,21 @@
         required="true"
         type="String"
         placeholder="Ex: Account"
-        description="Enter the object API Name"
+        description="Enter the object API Name to query records for when search is performed."
       />
             <property
         name="fieldApiNames"
         type="String"
-        label="Search Keys"
-        placeholder="Ex: Name, AccountNumber, Phone"
-        description="Enter the fields to query"
+        label="Field API Names"
+        placeholder="Ex: Name, Email, AccountNumber"
+        description="Optionally enter fields here. These will bind to the search query in the lookup."
+      />
+      <property
+        name="parentIdField"
+        type="String"
+        label="Parent Id Field"
+        placeholder="Ex: AccountId"
+        description="Optionally enter parentId field to bind queried records to."
       />
         </targetConfig>
     </targetConfigs>

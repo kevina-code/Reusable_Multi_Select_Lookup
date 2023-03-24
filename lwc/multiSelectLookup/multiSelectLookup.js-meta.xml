@@ -32,6 +32,7 @@
         label="Field API Names"
         placeholder="Ex: Name, Email, AccountNumber"
         description="Optionally enter fields here. These will bind to the search query in the lookup."
+<<<<<<< HEAD
       />
       <property
         name="parentIdField"
@@ -39,6 +40,8 @@
         label="Parent Id Field"
         placeholder="Ex: AccountId"
         description="Optionally enter parentId field to bind queried records to."
+=======
+>>>>>>> 639ff5d3877b7988b6207bd9486b2b21e6b07fdf
       />
         </targetConfig>
     </targetConfigs>

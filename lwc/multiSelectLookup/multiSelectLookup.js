@@ -17,7 +17,7 @@ export default class MultiSelectLookup extends LightningElement {
   @api iconName;
   @api objApiName;
   @api fieldApiNames;
-  @api parentIdField;
+  @api whereClause;
 
   searchWrappers = [];
   selectedRecords = [];
@@ -40,8 +40,8 @@ export default class MultiSelectLookup extends LightningElement {
       fieldApiNames: this.fieldApiNames,
       value: this.searchKey,
       selectedRecordIds: selectedRecordIds,
-      parentIdField: this.parentIdField,
-      parentRecordId: this.recordId
+      whereClause: this.whereClause,
+      recordId: this.recordId
     })
       .then((result) => {
         this.searchWrappers = result;

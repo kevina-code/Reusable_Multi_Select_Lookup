@@ -19,8 +19,8 @@ public class MultiSelectLookupCtrl {
     String fieldApiNames,
     String value,
     List<String> selectedRecordIds,
-    String parentIdField,
-    String parentRecordId
+    String whereClause,
+    String recordId
   ) {
     List<Wrapper> wrappers = new List<Wrapper>();
     try {
@@ -64,9 +64,9 @@ public class MultiSelectLookupCtrl {
           query += ')';
         }
 
-        // if parentIdField specified in target config
-        if (parentIdField != null && parentIdField != '') {
-          query += ' AND ' + parentIdField + ' = :parentRecordId';
+        // if whereClause specified in target config
+        if (whereClause != null && whereClause != '') {
+          query += ' AND ' + whereClause;
         }
         query += ' AND ID NOT IN: selectedRecordIds ORDER BY CreatedDate DESC LIMIT 10';
         for (SObject record : Database.Query(query)) {

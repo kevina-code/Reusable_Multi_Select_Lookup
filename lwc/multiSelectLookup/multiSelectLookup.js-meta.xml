@@ -29,9 +29,9 @@
             <property
         name="fieldApiNames"
         type="String"
-        label="Search Keys"
-        placeholder="Ex: Name, AccountNumber, Phone"
-        description="Enter the fields to query"
+        label="Field API Names"
+        placeholder="Ex: Name, Email, AccountNumber"
+        description="Optionally enter fields here. These will bind to the search query in the lookup."
       />
         </targetConfig>
     </targetConfigs>

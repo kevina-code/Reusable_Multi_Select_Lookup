@@ -1,6 +1,6 @@
 /**
  * Author     : Kevin Antonioli (braveitnow@pm.me)
- * Description: object-agnostic multi select lookup with dynamic lightning-datatable population based on selected records
+ * Description: object-agnostic multi select lookup
  * Created    : 03.22.2023
  */
 

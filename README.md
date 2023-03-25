@@ -1,10 +1,12 @@
-# Multi_Select_Lookup
+# Reusable_Multi_Select_Lookup
 
 Object-agnostic easily configurable multi-select lookup LWC 
 * Configure on any lightning record page
 * Ability to configure multiple search fields (not just Name) to bind to search query
 * Ability to display other fields (like Email and Phone for example) in the search results
 * Ability to specify where clause with dynamic id variables
+
+Deploy to Salesforce: https://live.playg.app/play/reusable-multiselect-lookup
 
 ![image](https://user-images.githubusercontent.com/124932501/227669992-258c5349-76c5-4fb5-b88d-3fc87a5618ce.png)
 

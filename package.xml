@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>FieldUtils</members>
+        <members>FieldUtilsTest</members>
         <members>MultiSelectLookupCtrl</members>
         <members>MultiSelectLookupCtrlTest</members>
+        <members>ObjPicklist</members>
+        <members>ObjPicklistTest</members>
+        <members>RecordDataModels</members>
+        <members>RecordDataModelsTest</members>
         <name>ApexClass</name>
     </types>
     <types>

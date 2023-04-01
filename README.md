@@ -8,6 +8,8 @@ Object-agnostic easily configurable multi-select lookup LWC
 
 Deploy to Salesforce: https://live.playg.app/play/reusable-multiselect-lookup
 
+Syntax:
+
 ```html
 <c-multi-select-lookup
         record-id={recordId}

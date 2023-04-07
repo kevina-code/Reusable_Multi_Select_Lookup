@@ -2,6 +2,9 @@
  * Author     : Kevin Antonioli (braveitnow@pm.me)
  * Description: controller for multiSelectLookup LWC
  * Created    : 03.22.2023
+ *
+ * Revisions:
+ * Date : Name : Notes
  */
 public class MultiSelectLookupCtrl {
   /**
@@ -22,8 +25,7 @@ public class MultiSelectLookupCtrl {
     String value,
     List<String> selectedRecordIds,
     String whereClause,
-    String recordId,
-    Integer recordLimit
+    String recordId
   ) {
     List<RecordDataModels.RecordWrapper> recordWrappers = new List<RecordDataModels.RecordWrapper>();
     try {
@@ -39,15 +41,16 @@ public class MultiSelectLookupCtrl {
           value,
           selectedRecordIds,
           whereClause,
-          recordId,
-          recordLimit
+          recordId
         );
+
+        System.debug('queryStr: ' + queryStr);
         for (SObject record : Database.Query(queryStr)) {
           recordWrappers.add(
             new RecordDataModels.RecordWrapper(
               record,
               fieldPaths,
-              FieldUtils.getColumnHeaders(objApiName, fieldPaths)
+              DataTableUtils.getColumnPropertiesList(objApiName, fieldPaths)
             )
           );
         }
@@ -76,8 +79,7 @@ public class MultiSelectLookupCtrl {
     String value,
     List<String> selectedRecordIds,
     String whereClause,
-    String recordId,
-    Integer recordLimit
+    String recordId
   ) {
     String queryStr = 'SELECT Id, Name';
     if (fieldPaths != null) {
@@ -108,13 +110,18 @@ public class MultiSelectLookupCtrl {
     }
     queryStr += ')';
 
-    // if whereClause specified in target config
+    queryStr += ' AND ID NOT IN :selectedRecordIds';
+
     if (whereClause != null && whereClause != '') {
       queryStr += ' AND ' + whereClause;
     }
-    queryStr +=
-      ' AND ID NOT IN: selectedRecordIds ORDER BY CreatedDate DESC LIMIT ' +
-      recordLimit;
+    if (
+      !whereClause.contains(' LIMIT ') &&
+      !whereClause.contains(' limit ') &&
+      !whereClause.contains(' Limit ')
+    ) {
+      queryStr += ' LIMIT 10';
+    }
     return queryStr;
   }
 }

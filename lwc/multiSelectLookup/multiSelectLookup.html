@@ -5,7 +5,7 @@
     data-source="lookupContainer"
   >
     <div class="slds-combobox_container slds-has-selection">
-      <div if:true={inputDisabled}>
+      <div lwc:if={inputDisabled}>
         <lightning-spinner
           size="large"
           alternative-text="Loading..."
@@ -111,7 +111,7 @@
               </li>
             </template>
             <!-- if there are no records..-->
-            <template if:true={messageFlag}>
+            <template lwc:if={messageFlag}>
               <li
                 class="slds-listbox__item"
                 style="text-align: center; font-weight: bold"

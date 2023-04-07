@@ -8,6 +8,22 @@ Object-agnostic easily configurable multi-select lookup LWC
 
 Deploy to Salesforce: https://live.playg.app/play/reusable-multiselect-lookup
 
+Syntax:
+
+```html
+<c-multi-select-lookup
+        record-id={recordId}
+        obj-api-name="Contact"
+        field-paths="Id, Name, Email, Account.Owner.Name"
+        field-paths-for-search="Name, Email"
+        where-clause="AccountId = :recordId ORDER BY FirstName"
+        icon-name="standard:contact"
+        onselected={handleSelectedRecords}
+        placeholder="Lookup record..."
+      >
+</c-multi-select-lookup>
+```
+
 ![image](https://user-images.githubusercontent.com/124932501/227669992-258c5349-76c5-4fb5-b88d-3fc87a5618ce.png)
 
 ![image](https://user-images.githubusercontent.com/124932501/227670564-f31c0187-23ea-4363-8974-9e72f57c4751.png)
